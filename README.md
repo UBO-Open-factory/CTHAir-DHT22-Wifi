@@ -46,9 +46,7 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
     L'ESP se programme (par exemple) avec l'IDE Arduino et à l'aide du programmateur décrit ci-dessous.
 
 <h1>Programmateur</h1>
-
     La programmation de l'ESP nécessite passe par une liaison UART et un convertisseur UART/USB pour communiquer avec un ordinateur de bureau. La solution adoptée a été de modifier un NodeMCU en enlevant l'ESP présent sur celui-ci et en le remplaçant par deux connecteurs. Ceci permet d'insérer des ESP à programmer.<br>
-    
     Mise en garde : le désoudage de l'ESP et la soudure des connecteurs est un peu délicate. Une photo du programmateur est dsponible dans le répertoire "programmateur"
 
 
