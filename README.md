@@ -6,12 +6,13 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
 
 <h1>Description</h1>
     Il intègre :
-        - un capteur spécifique pouvant mesurer à la fois la température et l'hygrométrie de l'air
-        - un microcontrôleur gérant le fonctionnement de l'ensemble
-        - un chargeur de batterie  (https://www.robotshop.com/eu/fr/chargeur-batteries-lipo-micro-usb-adafruit.html?gclid=Cj0KCQiAnaeNBhCUARIsABEee8XIQpiwdCSFdvlMACDXwCc1oCrDVzvkIQyEiWymK_8KR6TJM6AMqEUaAtSwEALw_wcB)
-        - un interrupteur On/Off
-        - Quelques composants discrets pour le fonctionnement du microcontôleur.
-
+    <ul>
+        <li>- un capteur spécifique pouvant mesurer à la fois la température et l'hygrométrie de l'air</li>
+        <li>- un microcontrôleur gérant le fonctionnement de l'ensemble</li>
+        <li>- un chargeur de batterie  (https://www.robotshop.com/eu/fr/chargeur-batteries-lipo-micro-usb-adafruit.html?gclid=Cj0KCQiAnaeNBhCUARIsABEee8XIQpiwdCSFdvlMACDXwCc1oCrDVzvkIQyEiWymK_8KR6TJM6AMqEUaAtSwEALw_wcB)</li>
+        <li>- un interrupteur On/Off</li>
+        <li>- Quelques composants discrets pour le fonctionnement du microcontôleur.</li>
+    </ul>
     Il se présente sous la forme d'un petit boitier de 58 x 50 x 26 mm perc de quelques trous intégrant la carte électronique et une batterie.
 
 <h1>Fonctionnement</h1>
