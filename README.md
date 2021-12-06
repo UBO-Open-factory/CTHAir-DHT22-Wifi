@@ -4,7 +4,7 @@ Capteur de température et d'hygrométrie (DHT22) connecté à un réseau Wifi
 Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'un lieu puis d'envoyer ces informations par Wifi à un serveur de données.
 
 
-##Description
+<h1>Description</h1>
     Il intègre :
         - un capteur spécifique pouvant mesurer à la fois la température et l'hygrométrie de l'air
         - un microcontrôleur gérant le fonctionnement de l'ensemble
@@ -14,13 +14,13 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
 
     Il se présente sous la forme d'un petit boitier de 58 x 50 x 26 mm perc de quelques trous intégrant la carte électronique et une batterie.
 
-##Fonctionnement
+<h1>Fonctionnement</h1>
     Le module réalise une mesure de temparature, une mesure d'hygrométrie et une mesure de la tension de la batterie.
     Il se connecte ensuite à un réseau Wifi dont on lui a comuniqué les paramètres (SSID et mot de passe).
     Puis il envoie les données sur un centre de données  dont on lui a communiqué l'adresse. Parmi les données envoyées figure un identifiant qui permettra au centre de données de savoir de quel module il reçoit des informations et donc comment les enregistrer.
     Enfin il se met en veille pour une durée programmée après laquelle il recommencera un cycle de mesure/envoi/sommeil...
 
-##Electronique
+<h1>Electronique</h1>
     L'électronique est composée  
         - d'une carte électronique qui mesure 36 x 44 mm. Elle est composée d'un circuit simple face. Le schéma électrique et le schéma d'implantation sont données dans le répertoire "Electronique" au format Eagle et PDF.
         - d'un ESP8266-12 Wifi (https://www.conrad.fr/p/joy-it-esp8266-module-uart-wifi-esp12-f-1-pcs-1707668?gclid=Cj0KCQiAnaeNBhCUARIsABEee8VpehfSateDr-OI0zyCJifhymOjrz4KTu_t2pbg9GdaGwhpkJJzVcgaAu0AEALw_wcB&gclsrc=aw.ds&utm_campaign=shopping-feed&utm_content=free-google-shopping-clicks&utm_medium=surfaces&utm_source=google&utm_term=1707668&vat=true). Il est programmé pour réaliser toutes les fonctions du module. 
@@ -31,7 +31,7 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
 
         L'assemblage de la carte électronique est décrit das le document "Assemblage" dans le répertoire "Documentation".
 
-##Programme
+<h1>Programme</h1>
     Le programme est décomposé en plusieurs fichiers disponibles dans le répertoire "programmation".
         Le fichier "CTHAir_DHT22_Wifi.ino" qui contient le programme principal.
         Le fichier "variables.h" qui contient les variables principales de fonctionnement du programme. Notamment l'identifiant du module qui sera transmis avec les données mesurées. Cet identifiant permettra qu centre de données de savoir quel module envoie des données.
