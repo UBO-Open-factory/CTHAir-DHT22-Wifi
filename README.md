@@ -42,7 +42,7 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
         <li>Le fichier "server_data.h" qui contient les paramètres du serveur de données sur lequel on veut envoyer les données (hote, URL, port et fingerprint).</li>
         <li>Le fichier "type_converter.h" qui contient quelques fonctions utiles pour trnasformer des variables numériques en chaines de caractères formatées.</li>
     </ul>
-
+    <br>
     L'ESP se programme (par exemple) avec l'IDE Arduino et à l'aide du programmateur décrit ci-dessous.
 
 <h1>Programmateur</h1>
