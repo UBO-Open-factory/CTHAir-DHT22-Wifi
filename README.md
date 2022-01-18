@@ -16,13 +16,15 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
     Il se présente sous la forme d'un petit boitier de 58 x 50 x 26 mm perc de quelques trous intégrant la carte électronique et une batterie.
 
 <h1>Fonctionnement</h1>
-    Le module réalise une mesure de temparature, une mesure d'hygrométrie et une mesure de la tension de la batterie.<br>
+    Le module réalise une mesure de température, une mesure d'hygrométrie et une mesure de la tension de la batterie.<br>
     Il se connecte ensuite à un réseau Wifi dont on lui a comuniqué les paramètres (SSID et mot de passe).<br>
     Puis il envoie les données sur un centre de données  dont on lui a communiqué l'adresse. Parmi les données envoyées figure un identifiant qui permettra au centre de données de savoir de quel module il reçoit des informations et donc comment les enregistrer.<br>
     Enfin il se met en veille pour une durée programmée après laquelle il recommencera un cycle de mesure/envoi/sommeil...
 
 <h1>Electronique</h1>
-    L'électronique est composée :
+
+    <h2>Version 2.4</h2>
+    Elle est composée :
     <ul>
         <li>d'une carte électronique qui mesure 36 x 44 mm. Elle est composée d'un circuit simple face. Le schéma électrique et le schéma d'implantation sont données dans le répertoire "Electronique" au format Eagle et PDF.</li>
         <li>d'un ESP8266-12 Wifi (https://www.conrad.fr/p/joy-it-esp8266-module-uart-wifi-esp12-f-1-pcs-1707668?gclid=Cj0KCQiAnaeNBhCUARIsABEee8VpehfSateDr-OI0zyCJifhymOjrz4KTu_t2pbg9GdaGwhpkJJzVcgaAu0AEALw_wcB&gclsrc=aw.ds&utm_campaign=shopping-feed&utm_content=free-google-shopping-clicks&utm_medium=surfaces&utm_source=google&utm_term=1707668&vat=true). Il est programmé pour réaliser toutes les fonctions du module. </li>
@@ -31,21 +33,42 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
         <li>un régulateur "low drop" (placé côté pistes de la carte électronique) dont le rôle est de ramener la tension batterie à une tension de acceptable pour le fonctionnement du module (typiquement 3,3 V).</li>
         <li>Quelques composants dont les rôles sont multiples (filtrage d'alimentation, polarisation de certaines broches de l'ESP8266 pour le démarrage).</li>
     </ul>
-        L'assemblage de la carte électronique est décrit das le document "Assemblage" dans le répertoire "Documentation".
+    L'assemblage de la carte électronique est décrit das le document "Assemblage" dans le répertoire "Documentation".
+    <br>
+    <h2>Version 3.1</h2>
+    Elle est  composée des mêmes composants que l'électronique V2.4. La seule différence tient dans la carte électronique dont le schéma électrique est légèrement différent pour alimenter le DHT22 par un GPIO de l'ESP.
+    Son montage est identique à la carte V2.4 à l'exception de l'emplacement des résistances. Les fichiers Eagle fournis donnent la nouvelle implantation.
+
 
 <h1>Programme</h1>
     Le programme est décomposé en plusieurs fichiers disponibles dans le répertoire "programmation".
+    L'ESP se programme (par exemple) avec l'IDE Arduino et à l'aide du programmateur décrit ci-dessous.
+    <h2>Version 1.0</h2>
+    Cette version utilise le protocole HTTP associé à un Fingerprint.
+
     <ul>
-        <li>Le fichier "CTHAir_DHT22_Wifi.ino" qui contient le programme principal.</li>
+        <li>Le fichier "CTHAir_DHT22_Wifi_v1_0.ino" qui contient le programme principal.</li>
         <li>Le fichier "variables.h" qui contient les variables principales de fonctionnement du programme. Notamment l'identifiant du module qui sera transmis avec les données mesurées. Cet identifiant permettra qu centre de données de savoir quel module envoie des données.</li>
         <li>Le fichier "wifi_data.h" qui contient les paramètres de connection à un réseau Wifi. Les deux paramètres sont a adapter en fonction du réseau auquel on veut se connecter.</li>
         <li>Le fichier "server_data.h" qui contient les paramètres du serveur de données sur lequel on veut envoyer les données (hote, URL, port et fingerprint).</li>
         <li>Le fichier "type_converter.h" qui contient quelques fonctions utiles pour trnasformer des variables numériques en chaines de caractères formatées.</li>
     </ul>
-    <br>
-    L'ESP se programme (par exemple) avec l'IDE Arduino et à l'aide du programmateur décrit ci-dessous.
+    il est nécessaire de renseigner : 
+        ssid et mod de passe dans le fichier "wifi_data.h"
+        host, url et fingerprint dans le fichier "server_data.h"
+        identifiant dans "variables.h"
 
-<h1>Programmateur</h1>
+    <br>
+<h2>Version 1.1</h2>
+    Dérivée de la version 1.0 elle n'utilise plus de fingerprint. LE reste fonctionne de la même manière.
+    Il sera donc nécessaire de renseigner les mêmes données que dans la version 1.0 (sauf le fingerprint) avant de programmer l'ESP12.
+
+
+    <h2>Version 2.0</h2>
+    Similaire à la version 1.0 sur le plan de l'organisation. Seul la partie principale change pour s'adapter à l'alimentation du DHT22 par un GPIO.
+    De ce fait il sera nécessaire de renseigner les mêmes données que dans la version 1.0 (sauf le fingerprint) avant de programmer l'ESP12.
+
+<h1>Programmateur V1</h1>
     La programmation de l'ESP nécessite passe par une liaison UART et un convertisseur UART/USB pour communiquer avec un ordinateur de bureau. La solution adoptée a été de modifier un NodeMCU en enlevant l'ESP présent sur celui-ci et en le remplaçant par deux connecteurs. Ceci permet d'insérer des ESP à programmer.<br>
     Mise en garde : le désoudage de l'ESP et la soudure des connecteurs est un peu délicate. Une photo du programmateur est dsponible dans le répertoire "programmateur"
 

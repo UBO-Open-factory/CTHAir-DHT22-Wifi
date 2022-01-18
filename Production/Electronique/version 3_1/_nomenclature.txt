@@ -1,0 +1,14 @@
+Montage :
+
+Nomenclature
+
+		ESP12									1
+		Connecteur femelle 2mm (1 x 8 br) 		2
+		connecteur mâle 2mm (1 x 8 br)			2
+		capteur DHT22							1
+		régulateur low drop 3v3					1
+		chargeur Adafruit microlipo				1
+		résistance 1/4W 330 kilo ohms			1
+		résistance 1/4W 100 kilo ohms			1
+		résistance 1/4W  12 kilo ohms			2
+		Condensateur chimique verical 100 µF	1
