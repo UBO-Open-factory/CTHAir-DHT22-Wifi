@@ -22,7 +22,6 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
     Enfin il se met en veille pour une durée programmée après laquelle il recommencera un cycle de mesure/envoi/sommeil...
 
 <h1>Electronique</h1>
-
     <h2>Version 2.4</h2>
     Elle est composée :
     <ul>
