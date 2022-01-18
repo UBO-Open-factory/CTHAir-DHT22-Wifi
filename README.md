@@ -44,7 +44,6 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
     L'ESP se programme (par exemple) avec l'IDE Arduino et à l'aide du programmateur décrit ci-dessous.
     <h2>Version 1.0</h2>
     Cette version utilise le protocole HTTP associé à un Fingerprint.
-
     <ul>
         <li>Le fichier "CTHAir_DHT22_Wifi_v1_0.ino" qui contient le programme principal.</li>
         <li>Le fichier "variables.h" qui contient les variables principales de fonctionnement du programme. Notamment l'identifiant du module qui sera transmis avec les données mesurées. Cet identifiant permettra qu centre de données de savoir quel module envoie des données.</li>
@@ -61,8 +60,6 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
 <h2>Version 1.1</h2>
     Dérivée de la version 1.0 elle n'utilise plus de fingerprint. LE reste fonctionne de la même manière.
     Il sera donc nécessaire de renseigner les mêmes données que dans la version 1.0 (sauf le fingerprint) avant de programmer l'ESP12.
-
-
     <h2>Version 2.0</h2>
     Similaire à la version 1.0 sur le plan de l'organisation. Seul la partie principale change pour s'adapter à l'alimentation du DHT22 par un GPIO.
     De ce fait il sera nécessaire de renseigner les mêmes données que dans la version 1.0 (sauf le fingerprint) avant de programmer l'ESP12.
@@ -70,7 +67,6 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
 <h1>Programmateur V1</h1>
     La programmation de l'ESP nécessite passe par une liaison UART et un convertisseur UART/USB pour communiquer avec un ordinateur de bureau. La solution adoptée a été de modifier un NodeMCU en enlevant l'ESP présent sur celui-ci et en le remplaçant par deux connecteurs. Ceci permet d'insérer des ESP à programmer.<br>
     Mise en garde : le désoudage de l'ESP et la soudure des connecteurs est un peu délicate. Une photo du programmateur est dsponible dans le répertoire "programmateur"
-
 
 <h1>Batteries</h1>
     Les batteries utilisables sont de type LiPo 3.7V. Plusieurs capacités sont disponibles (250 mAh, 400 mAh, 1000 mAh et 5000 mAh).
