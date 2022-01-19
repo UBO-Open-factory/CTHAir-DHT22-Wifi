@@ -32,7 +32,7 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
         <li>un régulateur "low drop" (placé côté pistes de la carte électronique) dont le rôle est de ramener la tension batterie à une tension de acceptable pour le fonctionnement du module (typiquement 3,3 V).</li>
         <li>Quelques composants dont les rôles sont multiples (filtrage d'alimentation, polarisation de certaines broches de l'ESP8266 pour le démarrage).</li>
     </ul>
-    L'assemblage de la carte électronique est décrit das le document "Assemblage" dans le répertoire "Documentation".
+    L'assemblage de la carte électronique est décrit dans le document "Assemblage" dans le répertoire "Documentation".
     <br>
     <h2>Version 3.1</h2>
     Elle est  composée des mêmes composants que l'électronique V2.4. La seule différence tient dans la carte électronique dont le schéma électrique est légèrement différent pour alimenter le DHT22 par un GPIO de l'ESP.
@@ -62,6 +62,19 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
     <h2>Version 2.0</h2>
     Similaire à la version 1.0 sur le plan de l'organisation. Seul la partie principale change pour s'adapter à l'alimentation du DHT22 par un GPIO.
     De ce fait il sera nécessaire de renseigner les mêmes données que dans la version 1.0 (sauf le fingerprint) avant de programmer l'ESP12.
+
+<h1>Programmateur V1</h1>
+    La programmation de l'ESP nécessite passe par une liaison UART et un convertisseur UART/USB pour communiquer avec un ordinateur de bureau. La solution adoptée a été de modifier un NodeMCU en enlevant l'ESP présent sur celui-ci et en le remplaçant par deux connecteurs. Ceci permet d'insérer des ESP à programmer.<br>
+    Mise en garde : le désoudage de l'ESP et la soudure des connecteurs est un peu délicate. Une photo du programmateur est dsponible dans le répertoire "programmateur"
+
+<h1>Batteries</h1>
+    Les batteries utilisables sont de type LiPo 3.7V. Plusieurs capacités sont disponibles (250 mAh, 400 mAh, 1000 mAh et 5000 mAh).
+
+<h1>Boitier V1</h1>
+        Cette version n'accepte que les batteries jusqu'à 1000mAh inclus.
+        LEs plans sont donnés dans le répertoire "Boitier V1"
+
+
 <h1>Table de compatibilité</h1>
     Le tableau suivant indique les compatibilités entre le matériel et le logiciel.
 <table>
@@ -91,10 +104,3 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
         <td>V1</td>
     </tr>
 </table>
-
-<h1>Programmateur V1</h1>
-    La programmation de l'ESP nécessite passe par une liaison UART et un convertisseur UART/USB pour communiquer avec un ordinateur de bureau. La solution adoptée a été de modifier un NodeMCU en enlevant l'ESP présent sur celui-ci et en le remplaçant par deux connecteurs. Ceci permet d'insérer des ESP à programmer.<br>
-    Mise en garde : le désoudage de l'ESP et la soudure des connecteurs est un peu délicate. Une photo du programmateur est dsponible dans le répertoire "programmateur"
-
-<h1>Batteries</h1>
-    Les batteries utilisables sont de type LiPo 3.7V. Plusieurs capacités sont disponibles (250 mAh, 400 mAh, 1000 mAh et 5000 mAh).
