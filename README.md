@@ -55,7 +55,6 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
         ssid et mod de passe dans le fichier "wifi_data.h"
         host, url et fingerprint dans le fichier "server_data.h"
         identifiant dans "variables.h"
-
     <br>
 <h2>Version 1.1</h2>
     Dérivée de la version 1.0 elle n'utilise plus de fingerprint. LE reste fonctionne de la même manière.
@@ -63,6 +62,35 @@ Le capteur présenté ici permet de mesurer la température et l'hygrométrie d'
     <h2>Version 2.0</h2>
     Similaire à la version 1.0 sur le plan de l'organisation. Seul la partie principale change pour s'adapter à l'alimentation du DHT22 par un GPIO.
     De ce fait il sera nécessaire de renseigner les mêmes données que dans la version 1.0 (sauf le fingerprint) avant de programmer l'ESP12.
+<h1>Table de compatibilité</h1>
+    Le tableau suivant indique les compatibilités entre le matériel et le logiciel.
+<table>
+    <tr>
+        <td></td>
+        <td><b>UOFPROTO2</b></td>
+        <td><b>UOFPROTO3</b></td>
+    </tr>
+    <tr>
+        <td><b>Electronique</b></td>
+        <td>V 2.4</td>
+        <td>V 3.1</td>
+    </tr>
+    <tr>
+        <td><b>Programme</b></td>
+        <td>V1.0<br>V1.1</td>
+        <td>V2.0</td>
+    </tr>
+    <tr>
+        <td><b>Boitier</b></td>
+        <td>V1</td>
+        <td>V1</td>
+    </tr>
+    <tr>
+        <td><b>Programmateur</b></td>
+        <td>V1</td>
+        <td>V1</td>
+    </tr>
+</table>
 
 <h1>Programmateur V1</h1>
     La programmation de l'ESP nécessite passe par une liaison UART et un convertisseur UART/USB pour communiquer avec un ordinateur de bureau. La solution adoptée a été de modifier un NodeMCU en enlevant l'ESP présent sur celui-ci et en le remplaçant par deux connecteurs. Ceci permet d'insérer des ESP à programmer.<br>
